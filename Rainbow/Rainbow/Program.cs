@@ -34,7 +34,6 @@ namespace Rainbow
             b2.MouseClick += B2_MouseClick;
 
             form.MouseClick += Form_MouseClick;
-
             form.ShowDialog();
         }
 

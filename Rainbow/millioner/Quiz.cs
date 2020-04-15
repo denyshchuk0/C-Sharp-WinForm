@@ -18,36 +18,26 @@ namespace millioner
             questions.Add(q);
         }
 
-        public void Run(Label lbText, Button Yes, Button No)
+        public void Run(Label lbText, bool Yes, bool No)
         {
-           
             try
             {
-                
-                if (Yes.Focused)
+                if (Yes == true)
                 {
                     questions[index].reply = true;
                     yes++;
                     index++;
                 }
-                else if (No.Focused )
+                else if (No == true)
                 {
                     questions[index].reply = false;
                     no++;
                     index++;
                 }
-
                 lbText.Text = questions[index].ToString();
-
             }
-            catch (Exception)
-            {
-
-                MessageBox.Show($"You result\n YES : {yes} \n NO : {no}");
-                Yes.Enabled = false;
-                No.Enabled = false;
-                Yes.Enabled = false;
-                No.Enabled = false;
+            catch(Exception) {
+                MessageBox.Show($"Yes : {yes} , No : {no}");
             }
         }
     }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Quiz_homework.Properties
+namespace EventPlanner2.Properties
 {
 
 
