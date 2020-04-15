@@ -64,7 +64,7 @@
             this.dateTimePicker.Size = new System.Drawing.Size(141, 20);
             this.dateTimePicker.TabIndex = 2;
             this.dateTimePicker.Value = new System.DateTime(2020, 4, 9, 0, 0, 0, 0);
-            this.dateTimePicker.Leave += new System.EventHandler(this.dateTimePicker_Leave);
+            this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_Leave);
             // 
             // lbAge
             // 
@@ -75,6 +75,7 @@
             this.lbAge.Size = new System.Drawing.Size(120, 20);
             this.lbAge.TabIndex = 2;
             this.lbAge.Text = "Age";
+            this.lbAge.Click += new System.EventHandler(this.lbAge_Click);
             // 
             // textHobby
             // 

@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Serialization;
 
 namespace Sudents
 {
@@ -31,7 +22,7 @@ namespace Sudents
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            StudentList studentList= new StudentList();
+            StudentList studentList = new StudentList();
             Student stud = new Student
             {
                 Name = textName.Text,
@@ -48,12 +39,17 @@ namespace Sudents
         private void btnLoad_Click(object sender, EventArgs e)
         {
             list.Load();
-            textName.Text= list.Stud[0].Name;
-            textSurname.Text= list.Stud[0].Surname;
-            dateTimePicker.Value= list.Stud[0].date;
-            comboBox.Text= list.Stud[0].Genger;
+            textName.Text = list.Stud[0].Name;
+            textSurname.Text = list.Stud[0].Surname;
+            dateTimePicker.Value = list.Stud[0].date;
+            comboBox.Text = list.Stud[0].Genger;
             textHobby.Text = list.Stud[0].Hobby;
-            MessageBox.Show("Completed!" , "Load",MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-        }       
+            MessageBox.Show("Completed!", "Load", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
+        private void lbAge_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
