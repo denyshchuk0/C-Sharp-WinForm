@@ -18,5 +18,10 @@ namespace Anketa
         {
 
         }
+        public override string ToString()
+        {
+            return $"{Genger} {date} {Lang}";
+
+        }
     }
 }

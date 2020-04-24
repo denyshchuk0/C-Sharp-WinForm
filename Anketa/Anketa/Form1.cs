@@ -1,31 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Anketa
 {
     public partial class Form1 : Form
     {
-        PeopleList list = new PeopleList();
+        PeopleList peopleList = new PeopleList();
         List<string> leng = new List<string>();
         string gender = "";
+        string tmp = " ";
 
         public Form1()
         {
             InitializeComponent();
         }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton rb = sender as RadioButton;
@@ -36,7 +26,7 @@ namespace Anketa
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            PeopleList peopleList = new PeopleList();
+
             People p = new People
             {
                 Name = textName.Text,
@@ -45,23 +35,26 @@ namespace Anketa
                 Lang = leng
 
             };
-            peopleList.AddStud(p);
+            peopleList.AddPeop(p);
             peopleList.SaveToXml();
-
+           
             this.groupBox.Text = textName.Text;
-            //this.listBox.Items.Add(textName.Text);
-            this.listBox.Items.Add("Date:" + dateTimePicker1.Value);
+          //  this.listBox.Items.Add(p.ToString());
+            this.listBox.Items.Add("Date:" + dateTimePicker1.Value.Date);
             this.listBox.Items.Add("Gender: "+ gender);
-            this.listBox.Items.Add("Knoleg: "+ leng);
+            leng.ForEach(delegate (String a) {
+                tmp += a+"  ";
+            });
+            this.listBox.Items.Add("Knoleg: "+ tmp);
 
             if (radioButton2.Checked)
             {
                 pictureBox.Image = Image.FromFile("../../img/M.png");
             }
-            else {
+            else
+            {
                 pictureBox.Image = Image.FromFile("../../img/F.png");
             }
-
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -70,6 +63,26 @@ namespace Anketa
             if (cb.Checked)
             {
                 leng.Add(cb.Text);
+            }
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            peopleList.Load();
+            this.groupBox.Text = peopleList.peoples[0].Name;
+            this.listBox.Items.Add("Date:" + peopleList.peoples[0].date);
+            this.listBox.Items.Add("Gender: " + peopleList.peoples[0].Genger);
+            peopleList.peoples[0].Lang.ForEach(delegate (String a) {
+                tmp += a + "  ";
+            });
+            this.listBox.Items.Add("Knoleg: " + tmp);
+            if (peopleList.peoples[0].Genger=="Male")
+            {
+                pictureBox.Image = Image.FromFile("../../img/M.png");
+            }
+            else
+            {
+                pictureBox.Image = Image.FromFile("../../img/F.png");
             }
         }
     }

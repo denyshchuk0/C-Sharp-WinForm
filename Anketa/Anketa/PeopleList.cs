@@ -14,16 +14,13 @@ namespace Anketa
     public class PeopleList
     {
         public List<People> peoples { get; set; } = new List<People>();
-
         public PeopleList()
         {
         }
-
-        public void AddStud(People e)
+        public void AddPeop(People e)
         {
             peoples.Add(e);
         }
-
         public void SaveToXml()
         {
             string file = "People" + ".xml";

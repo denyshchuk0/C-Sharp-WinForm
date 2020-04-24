@@ -43,6 +43,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox = new System.Windows.Forms.GroupBox();
+            this.btnLoad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
@@ -167,13 +168,12 @@
             this.listBox.Name = "listBox";
             this.listBox.Size = new System.Drawing.Size(130, 147);
             this.listBox.TabIndex = 5;
-            this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(21, 246);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(186, 51);
+            this.btnSave.Size = new System.Drawing.Size(100, 51);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -200,11 +200,22 @@
             this.groupBox.TabStop = false;
             this.groupBox.Text = "None";
             // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(143, 246);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(98, 51);
+            this.btnLoad.TabIndex = 10;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 326);
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.checkBox4);
@@ -244,6 +255,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.GroupBox groupBox;
+        private System.Windows.Forms.Button btnLoad;
     }
 }
 
