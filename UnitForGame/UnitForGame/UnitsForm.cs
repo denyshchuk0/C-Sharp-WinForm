@@ -37,7 +37,7 @@ namespace UnitForGame
             
             if (unit.Count == nupUnitsCount.Value)
                 return;
-       
+            nupUnitsCount.Minimum = lbTeams.Items.Count;
             foreach (Unit u in units)
             {
                 if (lbUnits.SelectedItem == u)
@@ -50,12 +50,13 @@ namespace UnitForGame
         }
         private void PopUnit(ListBox lbTeams, List<Unit> unit)
         {
+           
             if (lbTeams.Items.Count == 0)
             {
                 MessageBox.Show("Team is null!", "NULL", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
+            nupUnitsCount.Minimum = lbTeams.Items.Count-1;
             unit.RemoveAt(lbTeams.Items.Count - 1);
             RefreshDataBase(lbTeams, unit);
         }

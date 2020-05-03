@@ -51,39 +51,50 @@
             // 
             // lbWhite
             // 
+            this.lbWhite.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbWhite.FormattingEnabled = true;
+            this.lbWhite.ItemHeight = 18;
             this.lbWhite.Location = new System.Drawing.Point(16, 24);
             this.lbWhite.Name = "lbWhite";
-            this.lbWhite.Size = new System.Drawing.Size(82, 82);
+            this.lbWhite.Size = new System.Drawing.Size(82, 76);
             this.lbWhite.TabIndex = 0;
             // 
             // lbBlack
             // 
+            this.lbBlack.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbBlack.FormattingEnabled = true;
+            this.lbBlack.ItemHeight = 18;
             this.lbBlack.Location = new System.Drawing.Point(274, 24);
             this.lbBlack.Name = "lbBlack";
-            this.lbBlack.Size = new System.Drawing.Size(87, 82);
+            this.lbBlack.Size = new System.Drawing.Size(87, 76);
             this.lbBlack.TabIndex = 0;
             // 
             // lbUnits
             // 
+            this.lbUnits.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbUnits.FormattingEnabled = true;
+            this.lbUnits.ItemHeight = 18;
             this.lbUnits.Location = new System.Drawing.Point(142, 11);
             this.lbUnits.Name = "lbUnits";
-            this.lbUnits.Size = new System.Drawing.Size(87, 108);
+            this.lbUnits.Size = new System.Drawing.Size(87, 94);
             this.lbUnits.TabIndex = 1;
-            
             // 
             // lbTeams
             // 
+            this.lbTeams.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbTeams.FormattingEnabled = true;
+            this.lbTeams.ItemHeight = 18;
             this.lbTeams.Location = new System.Drawing.Point(16, 141);
             this.lbTeams.Name = "lbTeams";
-            this.lbTeams.Size = new System.Drawing.Size(117, 95);
+            this.lbTeams.Size = new System.Drawing.Size(117, 94);
             this.lbTeams.TabIndex = 2;
             // 
             // btnAddWhite
             // 
+            this.btnAddWhite.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Goldenrod;
+            this.btnAddWhite.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
+            this.btnAddWhite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddWhite.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddWhite.Location = new System.Drawing.Point(103, 24);
             this.btnAddWhite.Name = "btnAddWhite";
             this.btnAddWhite.Size = new System.Drawing.Size(33, 40);
@@ -94,6 +105,10 @@
             // 
             // btnSaveWhite
             // 
+            this.btnSaveWhite.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnSaveWhite.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.btnSaveWhite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveWhite.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSaveWhite.Location = new System.Drawing.Point(16, 112);
             this.btnSaveWhite.Name = "btnSaveWhite";
             this.btnSaveWhite.Size = new System.Drawing.Size(120, 23);
@@ -104,6 +119,10 @@
             // 
             // btnSaveBlack
             // 
+            this.btnSaveBlack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnSaveBlack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold;
+            this.btnSaveBlack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveBlack.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSaveBlack.Location = new System.Drawing.Point(235, 112);
             this.btnSaveBlack.Name = "btnSaveBlack";
             this.btnSaveBlack.Size = new System.Drawing.Size(126, 23);
@@ -114,6 +133,10 @@
             // 
             // btnAddBlack
             // 
+            this.btnAddBlack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Goldenrod;
+            this.btnAddBlack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
+            this.btnAddBlack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddBlack.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddBlack.Location = new System.Drawing.Point(235, 24);
             this.btnAddBlack.Name = "btnAddBlack";
             this.btnAddBlack.Size = new System.Drawing.Size(33, 40);
@@ -124,7 +147,11 @@
             // 
             // btnPopWhite
             // 
-            this.btnPopWhite.Location = new System.Drawing.Point(104, 66);
+            this.btnPopWhite.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnPopWhite.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
+            this.btnPopWhite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPopWhite.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnPopWhite.Location = new System.Drawing.Point(103, 66);
             this.btnPopWhite.Name = "btnPopWhite";
             this.btnPopWhite.Size = new System.Drawing.Size(33, 40);
             this.btnPopWhite.TabIndex = 8;
@@ -134,6 +161,10 @@
             // 
             // btnPopBlack
             // 
+            this.btnPopBlack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnPopBlack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
+            this.btnPopBlack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPopBlack.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnPopBlack.Location = new System.Drawing.Point(235, 66);
             this.btnPopBlack.Name = "btnPopBlack";
             this.btnPopBlack.Size = new System.Drawing.Size(33, 40);
@@ -157,36 +188,40 @@
             // lWhite
             // 
             this.lWhite.AutoSize = true;
+            this.lWhite.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lWhite.Location = new System.Drawing.Point(39, 8);
             this.lWhite.Name = "lWhite";
-            this.lWhite.Size = new System.Drawing.Size(35, 13);
+            this.lWhite.Size = new System.Drawing.Size(31, 16);
             this.lWhite.TabIndex = 12;
             this.lWhite.Text = "White";
             // 
             // lBlack
             // 
             this.lBlack.AutoSize = true;
+            this.lBlack.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lBlack.Location = new System.Drawing.Point(297, 8);
             this.lBlack.Name = "lBlack";
-            this.lBlack.Size = new System.Drawing.Size(34, 13);
+            this.lBlack.Size = new System.Drawing.Size(31, 16);
             this.lBlack.TabIndex = 13;
             this.lBlack.Text = "Black";
             // 
             // lCount
             // 
             this.lCount.AutoSize = true;
+            this.lCount.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lCount.Location = new System.Drawing.Point(157, 151);
             this.lCount.Name = "lCount";
-            this.lCount.Size = new System.Drawing.Size(61, 13);
+            this.lCount.Size = new System.Drawing.Size(55, 16);
             this.lCount.TabIndex = 14;
             this.lCount.Text = "Units count";
             // 
             // lChange
             // 
             this.lChange.AutoSize = true;
+            this.lChange.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lChange.Location = new System.Drawing.Point(157, 195);
             this.lChange.Name = "lChange";
-            this.lChange.Size = new System.Drawing.Size(60, 13);
+            this.lChange.Size = new System.Drawing.Size(55, 16);
             this.lChange.TabIndex = 15;
             this.lChange.Text = "Show team";
             // 
@@ -206,6 +241,11 @@
             this.nupUnitsCount.Location = new System.Drawing.Point(143, 167);
             this.nupUnitsCount.Maximum = new decimal(new int[] {
             4,
+            0,
+            0,
+            0});
+            this.nupUnitsCount.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
@@ -240,6 +280,8 @@
             this.Controls.Add(this.lbUnits);
             this.Controls.Add(this.lbBlack);
             this.Controls.Add(this.lbWhite);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "UnitsForm";
             this.Text = "Enter Unit";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
