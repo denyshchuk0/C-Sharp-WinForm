@@ -48,10 +48,10 @@
             // 
             this.cbCitys.FormattingEnabled = true;
             this.cbCitys.Items.AddRange(new object[] {
-            "Київ",
-            "Жмеринка",
-            "Одеса ",
-            "Львів"});
+            "Kiev",
+            "Zmerenka",
+            "Odessa",
+            "Lviv"});
             this.cbCitys.Location = new System.Drawing.Point(70, 202);
             this.cbCitys.Name = "cbCitys";
             this.cbCitys.Size = new System.Drawing.Size(121, 21);
@@ -93,6 +93,7 @@
             this.linkLabel.TabIndex = 3;
             this.linkLabel.TabStop = true;
             this.linkLabel.Text = "linkLabel1";
+            this.linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
             // 
             // statusStrip
             // 
