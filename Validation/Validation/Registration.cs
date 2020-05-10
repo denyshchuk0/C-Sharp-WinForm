@@ -1,12 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Validation
 {
     public partial class Registration : Form
     {
-    
         public Registration()
         {
             InitializeComponent();
@@ -20,9 +20,9 @@ namespace Validation
         }
         private void TextValidate(TextBox tb)
         {
+            AllValidate(tb);
             string tmp = tb.Text;
             bool findNum = false;
-
             for (int i = 0; i < tmp.Length; i++)
             {
                 if (Char.IsNumber(tmp[i]) == true)
@@ -30,18 +30,7 @@ namespace Validation
             }
             if (findNum == true)
                 errorProvider.SetError(tb, "Fild has number!");
-            AllValidate(tb);
-        }
-        private void NumValidate(TextBox tb)
-        {
-            string tmp = tb.Text;
-            //int findLeter = ;
-            //AllValidate(tb);
-
             
-            //if (findLeter == true)
-            //    errorProvider.SetError(tb, "Has leter!");
-
         }
         private void tbName_Validating(object sender, CancelEventArgs e)
         {
@@ -55,14 +44,13 @@ namespace Validation
 
         private void tbNumber_Validating(object sender, CancelEventArgs e)
         {
-            NumValidate(tbNumber);
+            AllValidate(tbNumber);
             if (tbNumber.Text.Length != 10 || tbNumber.Text[0] != '0')
-                errorProvider.SetError(tbNumber, "Number not corect! (0*********)");
+                errorProvider.SetError(tbNumber, "Number not corect! (0*********)");  
         }
 
         private void tbBirth_Validating(object sender, CancelEventArgs e)
-        {
-            NumValidate(tbBirth);
+        {  
             int age = 0;
             if (string.IsNullOrEmpty(tbBirth.Text))
             {
@@ -71,13 +59,25 @@ namespace Validation
             }
 
             if (!Int32.TryParse(tbBirth.Text, out age))
-                    errorProvider.SetError(tbBirth, "Minimal 12 age!");
-            
+                errorProvider.SetError(tbBirth, "Has leters!");
+            else {
+                if (age < 12)
+                    errorProvider.SetError(tbBirth, "Minimal age 12!");
+            }  
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            errorProvider.GetError(tbBirth);
+            var boxes = Controls.OfType<TextBox>();
+            foreach (var box in boxes)
+            {
+                if (!String.IsNullOrEmpty(errorProvider.GetError(box)))
+                {
+                    MessageBox.Show("Error", "Error");
+                    return;
+                }
+            }
+                MessageBox.Show("Complite", "Good");
         }
     }
 }

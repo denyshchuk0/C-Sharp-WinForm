@@ -56,7 +56,7 @@
             this.tbName.Location = new System.Drawing.Point(28, 30);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(203, 20);
-            this.tbName.TabIndex = 1;
+            this.tbName.TabIndex = 0;
             this.tbName.Validating += new System.ComponentModel.CancelEventHandler(this.tbName_Validating);
             // 
             // label2
@@ -73,7 +73,7 @@
             this.tbNumber.Location = new System.Drawing.Point(28, 168);
             this.tbNumber.Name = "tbNumber";
             this.tbNumber.Size = new System.Drawing.Size(203, 20);
-            this.tbNumber.TabIndex = 1;
+            this.tbNumber.TabIndex = 3;
             this.tbNumber.Validating += new System.ComponentModel.CancelEventHandler(this.tbNumber_Validating);
             // 
             // label3
@@ -121,7 +121,7 @@
             this.tbBirth.Location = new System.Drawing.Point(28, 118);
             this.tbBirth.Name = "tbBirth";
             this.tbBirth.Size = new System.Drawing.Size(203, 20);
-            this.tbBirth.TabIndex = 5;
+            this.tbBirth.TabIndex = 2;
             this.tbBirth.Text = "0";
             this.tbBirth.Validating += new System.ComponentModel.CancelEventHandler(this.tbBirth_Validating);
             // 
@@ -139,8 +139,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Registration";
-            this.Text = "Form1";
+            this.Text = "Registr";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
