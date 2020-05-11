@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3D51E5CE-3C64-459B-851B-CA95C0AA3CAA}</ProjectGuid>
+    <ProjectGuid>{17B14FD5-19B7-42FC-95DF-AEACF5AA08E4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TelephoneDirectory</RootNamespace>
-    <AssemblyName>TelephoneDirectory</AssemblyName>
+    <RootNamespace>TreeView</RootNamespace>
+    <AssemblyName>TreeView</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,26 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Child.cs">
+    <Compile Include="TreeV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Child.Designer.cs">
-      <DependentUpon>Child.cs</DependentUpon>
-    </Compile>
-    <Compile Include="People.cs" />
-    <Compile Include="Perent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Perent.Designer.cs">
-      <DependentUpon>Perent.cs</DependentUpon>
+    <Compile Include="TreeV.Designer.cs">
+      <DependentUpon>TreeV.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Child.resx">
-      <DependentUpon>Child.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Perent.resx">
-      <DependentUpon>Perent.cs</DependentUpon>
+    <EmbeddedResource Include="TreeV.resx">
+      <DependentUpon>TreeV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

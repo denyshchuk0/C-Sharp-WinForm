@@ -1,34 +1,47 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TelephoneDirectory
 {
     public partial class Child : Form
     {
-        PeopleList list = new PeopleList();
-        People people = new People();
-        Perent perent = new Perent();
-        public Child()
+        private Perent mainForm = null;
+        public Child(Form callingForm, People contact)
         {
             InitializeComponent();
+            mainForm = callingForm as Perent;
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
-            people.Name = tbName.Text;
-            people.Number = Convert.ToInt32(tbNumber.Text);
-            list.Add(people);
-        }
+            bool findNum = false;
+            for (int i = 0; i < tbName.Text.Length; i++)
+            {
+                if (Char.IsNumber(tbName.Text[i]) == true)
+                    findNum = true;
+            }
+            if (findNum == true)
+                errorProvider.SetError(tbName, "Fild has number!");
+            if (String.IsNullOrEmpty(tbName.Text))
+                errorProvider.SetError(tbName, "Fild not entered!");
+            if (String.IsNullOrEmpty(tbNumber.Text))
+                errorProvider.SetError(tbNumber, "Fild not entered!");
+            if (tbNumber.Text.Length != 10 || tbNumber.Text[0] != '0')
+                errorProvider.SetError(tbNumber, "Number not corect! (0*********)");
+            else
+            {
+                errorProvider.Clear();
+                this.mainForm.ListText = tbName.Text + " " + tbNumber.Text;
+            }
 
-        private void Child_FormClosed(object sender, FormClosedEventArgs e)
+        }
+        private void btnEnterPicture_Click(object sender, EventArgs e)
         {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox.Image = Image.FromFile(openFileDialog.FileName);
+                this.mainForm.IL = openFileDialog.FileName;
+            }
         }
     }
 }
