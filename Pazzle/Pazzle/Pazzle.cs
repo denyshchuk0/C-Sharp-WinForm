@@ -12,6 +12,8 @@ namespace Pazzle
 {
     public partial class Pazzle : Form
     {
+        Image tmpImage;
+        PictureBox tempBox;
         public Pazzle()
         {
             InitializeComponent();
@@ -25,38 +27,80 @@ namespace Pazzle
             pictureBox8.AllowDrop = true;
             pictureBox9.AllowDrop = true;
         }
-
-        private void Pazzle_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox1_DragEnter(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-                e.Effect = DragDropEffects.Copy;
+            e.Effect = DragDropEffects.Copy;
         }
 
         private void pictureBox1_DragDrop(object sender, DragEventArgs e)
         {
             PictureBox pb = sender as PictureBox;
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                object data = e.Data.GetData(DataFormats.FileDrop);
-                string fileName = ((string[])data)[0];
-                pb.Image = Image.FromFile(fileName);
-            }
-        }
-
-        private void tableLayoutPanel1_DragEnter(object sender, DragEventArgs e)
-        {
-            e.Effect = DragDropEffects.Copy;
+            tempBox.Image = pb.Image;
+            pb.Image = tmpImage;
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             PictureBox pb = sender as PictureBox;
+            tmpImage = pb.Image;
+            tempBox = pb;
             pb.DoDragDrop(pb, DragDropEffects.Copy);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            int[] mas = new int[8];
+            for (int i = 0; i < 8; i++)
+            {
+                int a = rnd.Next(1, 9);
+                if (!mas.Contains(a))
+                {
+                    mas[i] = a;
+                }
+                else
+                    i--;
+            }
+            int f = 0;
+            string name;
+            foreach (PictureBox item in tableLayoutPanel1.Controls.OfType<PictureBox>())
+            {
+                if (f < 8)
+                {
+                    name = mas[f].ToString();
+                    item.Image = Image.FromFile($"../../img/{name}.jpg");
+                    f++;
+                }
+            }
+        }
+        private void btnComplste_Click(object sender, EventArgs e)
+        {
+            //int i = 8;
+            //string name;
+            //bool complite = false;
+            //foreach (PictureBox item in tableLayoutPanel1.Controls.OfType<PictureBox>())
+            //{
+                //        if (i > 1)
+                //        {
+                //            name = i.ToString();
+                //            if (i == 4) { i-=2; continue; }
+                //            if (item.Tag.ToString() != name)
+                //            {
+                //                MessageBox.Show("NOT COMPLIT", "NOT COMPLITE");
+                //                  return;
+                //            }
+
+                //            else
+                //            {
+                //                complite = true;
+                //            }
+                //            i--;
+                //        }
+
+                //    }
+                //    if(i==1 && complite==true )
+                //        MessageBox.Show("COMPLIT", "COMPLITE");
+            //}
         }
     }
 }

@@ -59,18 +59,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -81,31 +81,31 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\image_part_001.jpg" />
+    <None Include="img\0.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\image_part_002.jpg" />
+    <None Include="img\1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\image_part_003.jpg" />
+    <None Include="img\2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\image_part_004.jpg" />
+    <None Include="img\3.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\image_part_005.jpg" />
+    <None Include="img\4.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\image_part_006.jpg" />
+    <None Include="img\5.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\image_part_007.jpg" />
+    <None Include="img\6.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\image_part_008.jpg" />
+    <None Include="img\7.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\image_part_009.jpg" />
+    <None Include="img\8.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\1561701178179383076.jpg" />
