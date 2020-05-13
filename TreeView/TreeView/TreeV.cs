@@ -1,14 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TreeView
@@ -29,7 +22,7 @@ namespace TreeView
             listView.LargeImageList = largeIcon;
 
             listView.FullRowSelect = true;
-            listView.ContextMenuStrip =contextMenuStrip;
+            listView.ContextMenuStrip = contextMenuStrip;
         }
 
         private void browseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,7 +96,6 @@ namespace TreeView
                 MessageBox.Show(ex.Message);
                 return;
             }
-
         }
         private void FillListView(string[] files, int index)
         {
@@ -139,7 +131,7 @@ namespace TreeView
         {
             try
             {
-               // listView.Clear();
+                // listView.Clear();
                 string[] folder = Directory.GetDirectories(path);
                 string[] files = Directory.GetFiles(path);
 
@@ -189,7 +181,6 @@ namespace TreeView
         {
             listView.View = View.Tile;
         }
-
         private void listView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             this.listView.ListViewItemSorter = new ListViewItemComparer(e.Column);
@@ -222,19 +213,18 @@ namespace TreeView
             }
             catch (Exception ex) { }
         }
-
         private void TreeV_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Delete)
                 deleteToolStripMenuItem_Click(null, null);
-            else if (e.KeyCode == Keys.Back) ;
-
+            else if (e.KeyCode == Keys.Back)
+                backToolStripMenuItem_Click(null, null);
         }
-
         private void backToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // string path = toolStripStatusLabel1.Text
-          //  RefreshListView()
+            toolStripStatusLabel1.Text = toolStripStatusLabel1.Text.Substring(0, toolStripStatusLabel1.Text.LastIndexOf("\\"));
+            listView.Clear();
+            RefreshListView(toolStripStatusLabel1.Text);
         }
     }
 
