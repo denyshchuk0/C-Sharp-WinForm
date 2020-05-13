@@ -49,6 +49,7 @@ namespace Pazzle
 
         private void button1_Click(object sender, EventArgs e)
         {
+            btnComplste.Visible = true;
             Random rnd = new Random();
             int[] mas = new int[8];
             for (int i = 0; i < 8; i++)
@@ -69,38 +70,39 @@ namespace Pazzle
                 {
                     name = mas[f].ToString();
                     item.Image = Image.FromFile($"../../img/{name}.jpg");
+                    item.Image.Tag=name;
                     f++;
                 }
             }
         }
         private void btnComplste_Click(object sender, EventArgs e)
         {
-            //int i = 8;
-            //string name;
-            //bool complite = false;
-            //foreach (PictureBox item in tableLayoutPanel1.Controls.OfType<PictureBox>())
-            //{
-                //        if (i > 1)
-                //        {
-                //            name = i.ToString();
-                //            if (i == 4) { i-=2; continue; }
-                //            if (item.Tag.ToString() != name)
-                //            {
-                //                MessageBox.Show("NOT COMPLIT", "NOT COMPLITE");
-                //                  return;
-                //            }
+            int i = 8;
+            string name;
+            bool complite = false;
+            foreach (PictureBox item in tableLayoutPanel1.Controls.OfType<PictureBox>())
+            {
+                if (i > 0)
+                {
+                    name = i.ToString();
+              
+                    if (item.Tag.ToString() != item.Image.Tag.ToString())
+                    {
+                        MessageBox.Show("NOT COMPLIT", "NOT COMPLITE");
+                        return;
+                    }
 
-                //            else
-                //            {
-                //                complite = true;
-                //            }
-                //            i--;
-                //        }
+                    else
+                    {
+                        complite = true;
+                    }
+                    i--;
+                }
 
-                //    }
-                //    if(i==1 && complite==true )
-                //        MessageBox.Show("COMPLIT", "COMPLITE");
-            //}
+            }
+            if (i == 0 && complite == true)
+                MessageBox.Show("COMPLIT", "COMPLITE");
         }
     }
-}
+   }
+
