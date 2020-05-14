@@ -23,8 +23,8 @@ namespace EXAM
             ChildForm child = new ChildForm();
             if (openFileDialog.ShowDialog() == DialogResult.OK) {
                 child.Path = openFileDialog.FileName;
+                child.Show();
             }
-            child.Show(); 
         }
     }
 }

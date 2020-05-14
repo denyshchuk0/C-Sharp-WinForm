@@ -49,12 +49,14 @@ namespace EXAM
                 test.trueCount = trueCount;
                 testsList.Add(test);
             }
+            toolStripProgressBar.Maximum = testsList.Count;
             textTest.Text = "Press Next to start";
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
             string addItem;
+            
             if (nextCount == testsList.Count)
             {
                 CheckBall();
@@ -74,14 +76,15 @@ namespace EXAM
                 }
                 this.nextCount++;
             }
+            toolStripProgressBar.Value = nextCount;
         }
 
         private void EndTest()
         {
             btnNext.Enabled = false;
             double percent = (ball * 100) / testsList.Count;
-            textTest.Text = "Your ball = " + ball.ToString() + " is " + percent.ToString() + "%";
-            MessageBox.Show(ball.ToString() + "/" + testsList.Count.ToString(), "complite!!!");
+            textTest.Text = "Your ball is " + percent.ToString() + "%";
+            MessageBox.Show(ball.ToString() + "/" + testsList.Count.ToString(), "Complite!!!", MessageBoxButtons.OK);
         }
 
         private void CheckBall()
